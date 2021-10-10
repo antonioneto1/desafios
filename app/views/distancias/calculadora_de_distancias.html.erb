@@ -1,0 +1,54 @@
+<% provide(:title, "Calculador de Distâncias") %>
+
+<div class="page-header">
+ <h1>Calculador de Distâncias</h1>
+ <div class="clearfix"></div>
+</div>
+
+<%= form_for @distancia, :as => :calculadora_de_distancias, :url => distancias_calculadora_de_distancias_path do |form| %>
+<div class="row form-group flex-v-center">
+  <div class="col-md-12">
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :lagitude_1, "Lagitude 1" %> 
+      </div>
+      <div class="col-xs-2">
+        <%= form.text_area :lagitude_1 %>
+      </div>
+    </div>
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :lagitude_2, "Lagitude 2" %> 
+      </div>
+      <div class="col-xs-2">
+        <%= form.text_area :lagitude_2 %>
+      </div>
+    </div>
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :longitude_1, "Longitude 1" %> 
+      </div>
+      <div class="col-xs-2">
+        <%= form.text_area :longitude_1 %>
+      </div>
+    </div>
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :longitude_2, "Longitude 2" %> 
+      </div>
+      <div class="col-xs-2">
+        <%= form.text_area :longitude_2 %>
+      </div>
+    </div>
+    <hr/>
+    <div class="row form-group flex-v-center">
+      <div class="col-sm-4">
+        <%= form.label :comprimento, "Distancia de um ponto para outro:" %>
+        <%= @distancia.comprimento %> 
+        <% if @distancia.comprimento %> metros <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  <%= form.submit 'Calcular', class: 'btn btn-primary' %>
+<% end  %>

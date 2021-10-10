@@ -1,0 +1,53 @@
+<% provide(:title, "Desafio 1") %>
+
+<div class="page-header">
+ <h1>Calculador Tempo de Miojo</h1>
+ <div class="clearfix"></div>
+</div>
+
+<%= form_for @miojo, :as => :calculadora, :url => miojos_calculadora_path do |form| %>
+<div class="row form-group flex-v-center">
+  <div class="col-md-12">
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :tempo_de_preparo, "Tempo de preparo" %> 
+      </div>
+      <div class="col-xs-2">
+        <%= form.number_field :tempo_de_preparo %> minutos
+      </div>
+    </div>
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :tempo_de_preparo, "Tempo ampulheta 1" %>
+      </div>
+      <div class="col-xs-2 col-sm-2">
+        <%= form.number_field :ampulheta_1 %> minutos
+      </div>
+    </div>
+    <div class="row form-group flex-v-center">
+      <div class="col-xs-2 col-sm-2">
+        <%= form.label :tempo_de_preparo, "Tempo ampulheta 2" %>
+      </div>
+      <div class="col-xs-2 col-sm-2">
+        <%= form.number_field :ampulheta_2 %> minutos
+      </div>
+    </div>
+    <hr/>
+    <div class="row form-group flex-v-center">
+      <div class="col-sm-4">
+        <%= form.label :tempo_de_preparo, "O miojo ficará pronto em:" %>
+        <%= @miojo.resultado %> 
+        <% if @miojo.resultado %> minutos <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  <%= form.submit 'Calcular', class: 'btn btn-primary' %>
+<% end  %>
+<hr>
+<div class="row form-group flex-v-center">
+  <div class="col-sm-4">
+    <a href="distancias/calculadora_de_distancias">Desafio 2</a>
+    </form>
+  </div>
+</div>
